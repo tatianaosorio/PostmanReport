@@ -1,0 +1,610 @@
+{
+	"info": {
+		"_postman_id": "72af5df3-7842-447f-bace-86b356c00201",
+		"name": "Customers",
+		"description": "API for creating and managing banking customers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "20594667-72af5df3-7842-447f-bace-86b356c00201"
+	},
+	"item": [
+		{
+			"name": "update",
+			"item": [
+				{
+					"name": "Update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64a1bef5-0d47-46f4-9185-f879966cc07c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3362d355-c6cf-41d6-be4c-65a3b7611cd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"<string>\",\n  \"password\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update?id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "The user's ID (required)"
+								}
+							]
+						},
+						"description": "Send the keys that you'd like to update, this can be one or more of `firstName`, `lastName` and `password`."
+					},
+					"response": [
+						{
+							"id": "c0dabf9e-7a00-4aea-8315-3a6a0a815b21",
+							"name": "Update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"<string>\",\n  \"password\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update?id=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update"
+									],
+									"query": [
+										{
+											"description": "The user's ID (required)",
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "<string>"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"status\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "9116df20-cf8a-402b-9e38-8a7671c1e63e"
+		},
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e222f354-c206-4b0e-ab66-c3925202ee45",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "447fe8da-4604-445f-8587-098f5f9649e0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/get?all=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "all",
+									"value": "<string>"
+								}
+							]
+						},
+						"description": "Get all users in the system."
+					},
+					"response": [
+						{
+							"id": "f29dcd20-e113-4c1f-a2c6-e1b04d379ff2",
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/get?all=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get"
+									],
+									"query": [
+										{
+											"key": "all",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "<string>"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "1ca0b3dd-bf86-40f9-bf42-18735dbf74f3"
+		},
+		{
+			"name": "delete",
+			"item": [
+				{
+					"name": "Delete user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f10ae948-2e3a-4436-b747-50cfb272160f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3f96b206-af5a-4cfb-9eb2-68cb65b6926a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"example\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete?id=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<string>",
+									"description": "The user's ID"
+								}
+							]
+						},
+						"description": "Deletes a user from the system by `id`."
+					},
+					"response": [
+						{
+							"id": "f08ad3a5-9b86-4071-ac53-350dda073343",
+							"name": "Delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"example\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delete?id=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"description": "The user's ID",
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "<string>"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "1ee4b4e8-dac5-4cd5-b834-785818c2e477"
+		},
+		{
+			"name": "create",
+			"item": [
+				{
+					"name": "New user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4df13bb8-ae22-4e31-a484-48c902528d93",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5cd02a44-52f1-411a-bdb5-68032128f52f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create"
+							]
+						},
+						"description": "Creates a new user in the system. The user will be assigned an ID automatically. This can be found in the response."
+					},
+					"response": [
+						{
+							"id": "720b0cd3-bbd0-4a20-89f3-1fa838baa76f",
+							"name": "New user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": "<string>"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "<string>"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"status\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "c3f8c2b3-8c49-414f-acd6-0ba7f34bd454"
+		}
+	],
+	"variable": [
+		{
+			"id": "4c36dd45-03ad-44a2-a0ba-482a9964d834",
+			"key": "baseUrl",
+			"value": "https://3f9ab1dc-fede-484c-b519-0cc8b90c827a.mock.pstmn.io"
+		}
+	]
+}
